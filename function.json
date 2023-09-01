@@ -1,0 +1,50 @@
+{
+  "function": [
+    "Uecho",
+    "cave",
+    "enable",
+    "disable",
+    "talkBan",
+    "op",
+    "caveAdd",
+    "caveList",
+    "caveEnable",
+    "FigurBed",
+    "BotInfo"
+  ],
+  "index": {
+    "Uecho": 0,
+    "cave": 1,
+    "enable": 2,
+    "disable": 3,
+    "talkBan": 4,
+    "op": 5,
+    "caveAdd": 6,
+    "caveList": 7,
+    "caveEnable": 8,
+    "FigurBed": 9,
+    "BotInfo": 10
+  },
+  "enable": {
+    "Uecho": true,
+    "cave": true,
+    "enable": true,
+    "disable": true,
+    "talkBan": true,
+    "caveAdd": true
+  },
+  "white_list": [
+    2710458198,
+    256626981
+  ],
+  "command": [
+    "Cexit",
+    "sys_ver",
+    "help"
+  ],
+  "commandIndex": {
+    "Cexit": 0,
+    "sys_ver": 1,
+    "help": 2
+  }
+}

@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib\hv\AsyncHttpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\axios.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\base64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\Buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\Channel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\Event.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\EventLoop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\EventLoopThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\EventLoopThreadPool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hasync.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hatomic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hbase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hbuf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hdir.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hendian.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\herr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hexport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hlog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hloop.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hmain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hmap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hmath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hmutex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hobjectpool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hpath.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hplatform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hproc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hscope.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hsocket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hssl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hstring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hsysinfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hthread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hthreadpool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\htime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\http_content.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\httpdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpMessage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpResponseWriter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\HttpService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hurl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hv.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\hversion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\ifconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\iniparser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\json.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\md5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\nlog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\requests.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\sha1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\singleton.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\Status.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\TcpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\TcpServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\ThreadLocalStorage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\UdpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\UdpServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\WebSocketChannel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\WebSocketClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\WebSocketParser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\WebSocketServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\hv\wsdef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\function\botFunction.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\function\json.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\function\log.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\function\cq.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lib\dll\hv.dll" />
+    <None Include="config.editorconfig" />
+    <None Include="function.json" />
+    <None Include="cave.json" />
+    <None Include="wc.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="lib\dll\hv.lib" />
+    <Library Include="lib\dll\hv_static.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

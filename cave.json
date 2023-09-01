@@ -1,0 +1,922 @@
+﻿[
+  {
+    "author": "-",
+    "content": "快来试试PCL2下载器!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "白日放鸽须纵酒，龙猫作伴好还乡",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "/kill @e[type=creeper]",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "发出死了的声音!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我在想为什么没有人一开始就用最强攻击呢?",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Welcome to……O…PCL II!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "在38度的太阳底下放寒假。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "龙猫NB!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "furry？furry!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "lbwnb!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "如果你打开了调试模式，主页右侧就会显示启动日志。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "选择自动配置游戏内存时，PCL2将会根据剩余内存与当前安装的Mod数量动态调整分配的内存!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "龙猫画的饼很大!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "打开ICEY，又是气死旁白的天呢!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "开始了？",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "回声洞草。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "哇!金色传说!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Nobody knows PCL 2 better than me!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "不挖坑，毋宁死!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "韩信带净化，只有你们想不到，没有我老八做不到的奥。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "将鼠标悬浮在下载页的左边栏，可以找到刷新按钮。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "穷举不能让你变得更强!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "点击千万别点，可以获得所有主题。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "今天你猫车了吗?",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "老内测了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "这是想上最子的SS!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你可以在版本设置的版本分类选项中将某个版本隐藏。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Nothing is true, everything is feature!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2盒子!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2咕测群!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "17张牌你能秒我？你能秒杀我？",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "El Primo!!!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我不做人啦! JOJO! !",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Also try看云模拟器（bushi）!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "那就当做没有Bug好了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "* 你赞助了龙猫，这使你充满了决心",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "10岁以下的儿童不宜食用小块块! (PS: 我的世界ESRB分级为10+)",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "据调查，有90.3%的用户点击了百宝箱中的千万别点按钮。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我曾经也是个冒险家，直到我的膝盖中了一箭!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Ctrl + S!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "花开花落，再灿烂的星光也终将消失。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "奇怪的知识增加了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "博士，您还有许多事情需要处理，现在还不能休息哦",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "伊莉雅：美游来过这里吗？",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我跟你讲你这样是要被夹的!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "腾讯**百度网盘** ",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "在版本选择页面右键某个版本也可以进入版本设置页面。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我斑愿称你为最强启动器!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "龙猫说快改完Bug了，他一定没改完，就像老婆饼里没有老婆，康师傅牛肉面里没有牛肉。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "有一回一一声--吗一一有-回-声-吗-有回声吗？",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "/give @a hugs 64",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "好臭啊。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "不打钱就削土豆!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "点一下不够就点两下!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你号没了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2的隐藏主题中有着一个解密游戏， 直到现在通关人数还不到20个。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "总有些话，是反的，是倒的!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "公 主 焊 接",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你可以在PCL文件夹下新建hints.txt来自定义 你知道吗 窗中的内容!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "最强的法术是掉线法术!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "这是刻意的游戏设计!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "丢人!你给我滚出战场!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "It's time to go to school.",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "精 神 小 伙",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "爷想被夹!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "点击版本右侧的心形就能将该版本加入收藏夹，便于查找。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我爱吃薯条 awa",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我永远喜欢艾米利亚!!!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我Forge打开这么慢一定是你启动器出Bug了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "MCD被网易收走了呢",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "熬夜对身体不好，所以我建议你们……玩通宵。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "掉帧是道具吗",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "CO~ CO~ DA~ YO~",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "B.B.K.K.B.K.K",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "信标工程师!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "建议用脑壳想想再干事，脑壳别那么铁。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "网址就是来路",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "将鼠标悬浮在下载页的版本上，可以在右侧找到查看更新日志按钮!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "平角裤平角裤",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "众所周知，十大主题有十一个!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "砸反馈就完事了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "橙色线，藏着线和点!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "为什么会变成这样呢？",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "还记得第一次玩我的世界的时候吗？那曾是很美好的回忆……",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2服务器第一朵蘑菇云始于Cande_Ping!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "MC-98587!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "千万别点千万别点!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我们是如何走到这一地步的",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Completely shocked!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2是个我的世界启动器吗？不，是音乐播放器，Mod下载器和下载软件。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "从老线索中发现新东西!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Also try Minecraft Dungeons!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "支持PCL2,支持龙猫!加油! ",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我绝对不会因为回声洞给龙腾猫跃发电的!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "之神的馈赠啊，吾用于击溃敌人的盔甲，将您的神力，附着在这把弓上!风破!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Hello, world!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "猪灵劲曲!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "抱抱是第一生产力!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "午时已到!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Also try gamejam!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "战神与他的文盲老父亲!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "BUG. JANG!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Also try Sky Factory 4!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "/summon Creeper ~ ~ ~ {Fuse:0}",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "好快の刀!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "人群当中钻出来一个光! 头!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "结束了?开始了。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你可以在PCL文件夹下新建hints.txt 来自定义你知道吗窗口中的内容!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "这次一定!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我永远单推谢拉!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "..-....-.-..---...-.-....-.--.-.-..-.. ..---",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Hello, Herobrine!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "所以....我不知道有啥好说的,反正氵一个留言就行了 qwq",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "床里藏着TNT!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你知道龙猫 MC 的 ID 是 LTCat 吗?",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Also try The Witness!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "五十人解密加强连!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "逗比水货1256!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Deadline 是第一产力!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "君临天下!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "净他妈扯淡!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "在时间的流逝中，没有什么事是成不变的。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "线索在游戏之外!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "如果你有多个正版账号，你可以退出登录后在邮箱的下拉框中进行切换。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "生活奇奇怪怪，我得可可爱爱。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "希望可爱的龙猫能更容易看懂自己写的代码。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PPCCLL!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "啊wee改哈鞘嫦娥我刚不疤痕处哈维楚王嗡阿格王朔! ! !",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "王八坨子号!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "您，人？神!砰砰砰!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "想清楚再反馈，不然给你夹子大套餐!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "九头蛇万岁!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "网址就是来路!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "越过屏障!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "叮叮叮叮!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "永恒的伙伴!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "顿自定义看起来很难，但是你仔细研究发现你可以套娃。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "按 [E] 以赛艇!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "挖三填一：刚进入 MC 的玩家可能都不知道这个游戏存在危险，只知道东看西瞅瞅，所以到了晚上的时候才知道MC的可怕。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2 YES!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2 有外置登录!!!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "大人，食食便了。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "就 该 在 地 狱 中 燃 烧",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "时间与空间的交集，聚能与锁钥的紧合，时空横竖之穿，缥缈无定之门，虚无而又现实的世界，吾乃末界之神，听从吾的召唤，超时空逆转!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "发出咕咕咕的声音!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "XeKr 打钱!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "很快就到你家门口挖矿!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "这是一个无情的下载器!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我 Mojang 绝不跳票!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我的梦想是天天咕咕咕 (逃",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Also try SCP-CN-048-J!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "NETHER UPDATE!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "小问号，你是否有很多朋友？",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "龙猫都写了些什么 233333",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "蠢虫? 毒虫? 蟲虫?",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": " Also try Minecraft Dungeons!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "现在玩的嗨，待会被夹更嗨!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "雄火龙又双聂聂被绿了。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "如果在功能设置中启用游戏更新提示，在MC更新时PCL2就会弹窗进行提醒。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "MCD被网易收走了呢。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "PCL2 的第一个内部版本更新于 2018 年 8 月 13 日。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你所做的一切，都是在重复昨天。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "该说什么好呢 说什么好呢 什么好呢 么好呢 好呢 呢 (回声真大",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "向骰子低头!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "lm：小心夹子",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我的世界一直都不只是一款马赛克游戏!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "如果游戏没有声音，可以尝试在版本设置中点 补全文件 按钮。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我就是叫紫妈怎么了，有本事从我背后出现然后把我的脸按在键盘aoikxznwgp",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "比钻石更强!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "丢人!你给我退出战场!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "拖拽PCL2的窗口边缘就能调整启动器的窗口大小。",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Minecraft 2.0!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Plain musiC pLayer 2!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "苦力怕!不是爬行者!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "你吼辣么大声干什么嘛!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "众所周知，电子游戏不需要视力!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "脑子放假去了!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "我国有一套完整的未成年人保护法!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "awwwww man!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "来硬的!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "Get Over Here!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "帮助的英文是 Help!",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "信标工程师",
+    "from": "回声洞"
+  },
+  {
+    "author": "-",
+    "content": "熬夜对身体不好，所以我建议你们......玩通宵。",
+    "from": "回声洞"
+  }
+]
