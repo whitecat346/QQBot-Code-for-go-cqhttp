@@ -237,7 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="lib\dll\hv.dll" />
-    <None Include="config.editorconfig" />
+    <None Include=".editorconfig" />
     <None Include="function.json" />
     <None Include="cave.json" />
     <None Include="wc.json" />

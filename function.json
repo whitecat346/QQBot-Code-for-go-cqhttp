@@ -31,7 +31,12 @@
     "enable": true,
     "disable": true,
     "talkBan": true,
-    "caveAdd": true
+    "op": true,
+    "caveAdd": true,
+    "caveList": true,
+    "caveEnable": true,
+    "FigurBed": true,
+    "BotInfo": true
   },
   "white_list": [
     2710458198,

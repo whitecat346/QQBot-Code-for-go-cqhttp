@@ -1,21 +1,22 @@
-﻿#pragma comment(lib, "hv.lib")
+﻿#pragma comment(lib, "hv_static.lib")
 #pragma execution_character_set("utf-8")
 
 #include <map>
 #include <fstream>
 #include <iostream>
 #include <string>
-#include "lib/function/botFunction.hpp"
 #include "lib/hv/WebSocketClient.h"
+#include "lib/hv/json.hpp"
+#include "lib/function/botFunction.hpp"
 #include "lib/function/log.hpp"
 
 typedef void(*fun) (std::string* msg);
-fun botFunction[] = { Uecho, cave, enable, disable, talkBan, op, caveAdd, caveList, caveEnable, FigureBed, BotInfo };
+fun botFunction[] = { Uecho, cave, enable, disable, talkBan, op, caveAdd, caveList, caveEnable, FigurBed, BotInfo };
 std::map<std::string, int>  mBotFun;
 std::map<std::string, bool> mBotOn;
 hv::WebSocketClient ws;
 LogPrint log_print;
-bool debug = true;
+bool debug = false;
 
 void openSet()
 {
@@ -33,14 +34,13 @@ void openSet()
 
 void OnMessage(const std::string& msg)
 {
-	std::string toMsg = msg;
 	nlohmann::json jMsg = nlohmann::json::parse(msg);
+	std::string toMsg = msg;
 
 	if (debug == true) std::cout << log_print.MSG_INFO(msg) << std::endl;
 
 	// Message
-	std::string message_info;
-	if (jMsg.contains("post_type"))
+	if (jMsg.find("post_type") != jMsg.end())
 	{
 		std::cout << log_print.MSG_OINFO();
 		std::cout << "消息类型：" << jMsg.at("post_type") << " 消息时间：" << jMsg.at("time") << std::endl;
@@ -70,7 +70,7 @@ void OnMessage(const std::string& msg)
 					{
 						std::cout << log_print.MSG_INFO("执行函数：") << log_print.BK_GREEN(msgFun(info)) << std::endl;
 						botFunction[mBotFun[msgFun(info)]](&toMsg);
-						ws.send(info);
+						ws.send(toMsg);
 						std::cout << log_print.MSG_INFO("消息已发送！") << std::endl;
 						jMsg.clear();
 					}
@@ -87,7 +87,7 @@ void OnMessage(const std::string& msg)
 			}
 		}
 	}
-	else if (jMsg.contains("status")) /*log.MSG_ERROR(BotFunction::jsonS(jMsg.at("status")));*/
+	else if (jMsg.find("status") != jMsg.end()) /*log.MSG_ERROR(BotFunction::jsonS(jMsg.at("status")));*/
 	{
 		std::string temp = jMsg.at("status");
 		if (temp == "ok") std::cout << log_print.MSG_OINFO() << log_print.FC_GREEN("API 调用成功\n");
@@ -110,10 +110,6 @@ int main()
 {
 	system("chcp 65001");
 	system("cls");
-
-	std::ifstream cfg("config.json");
-	nlohmann::json jCfg = nlohmann::json::parse(cfg);
-	cfg.close();
 
 	//Ws Connection Set
 	ws.onopen = OnOpen;

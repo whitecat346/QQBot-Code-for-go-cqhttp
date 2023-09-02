@@ -106,11 +106,12 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\dll\;C:\Users\yanyu\Desktop\QQBot\cqhttp-ws\lib\dll\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>hv.lib;hv_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkStatus>true</LinkStatus>
     </Link>
@@ -129,7 +130,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\yanyu\Desktop\QQBot\cqhttp-ws\lib\dll;C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>hv_static.lib;hv.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -210,7 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cave.json" />
-    <None Include="config.editorconfig" />
+    <None Include=".editorconfig" />
     <None Include="function.json" />
     <None Include="lib\dll\hv.dll" />
     <None Include="wc.json" />

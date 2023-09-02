@@ -1,9 +1,8 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include <string>
 #include <fstream>
 #include <random>
-#include <Windows.h>
 #include "json.hpp"
 #include "cq.hpp"
 
@@ -28,60 +27,17 @@ std::string jsonS(std::string in)
 
 std::string BotfunOut(std::string in) { return in; }
 
-//ÇëÇóÏûÏ¢Éú³ÉÆ÷  2023.8.20 ÓÉÓÚINTÓëSTRINGºÍBOOLµÄÅĞ¶ÏÎÊÌâ£¬·ÅÆú¿ª·¢
-/*
-
-{"action":"send_group_msg","params":{"group_id":114514,"message":"Hello World!"}}
-
-{"action":"send_group_msg","params":{"group_id":114514,"message":"Hello World!"},"echo":"Test"}
-
-*/
-//std::string requestMsg(std::string action, std::string params, std::string echo)
-//{
-//	std::string out = "\{\"action\":\"" + action + "\"" , temp;
-//	if (params.size() != 0)
-//	{
-//		out.append(",\"params\":\{");
-//		for (int i = 0; i < params.size(); i++)
-//		{
-//			if (params[i] != ':' || params[i] != ' ')
-//				temp[i] = params[i];
-//			else if (params[i] == ':')
-//			{
-//				out.append("\"" + temp + "\":");
-//				temp.clear();
-//			}
-//			else if (params[i] == ' ')
-//			{
-//				for (int a = 0; a < temp.size(); a++)
-//				{
-//					if (48 <= temp[a] <= 57) out.append(temp + ",");
-//					else out.append("\"" + temp + "\",");
-//				}
-//				temp.clear();
-//			}
-//		}
-//		out.append("\"" + temp + "\"\}");
-//	}
-//	if (echo.size() != 0) out.append(",\"echo\":\"" + echo + "\"}");
-//	return out;
-//}
-
-void Uecho(std::string* msg)
+void Uecho(std::string* Botmsg)
 {
-	nlohmann::json jmsg = nlohmann::json::parse(msg);
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
+
 	std::string UEtemp, funStr = jmsg.at("message");
-	for (int i = 0; i < funStr.size(); i++)
-	{
-		if (funStr.at(i) == ' ')
-		{
-			for (int a = i++; a < funStr.size(); a++)
-				UEtemp += funStr.at(a);
-			break;
-		}
-	}
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
+	for (int i = funStr.find(' ') + 1; i < funStr.size(); i++)
+		UEtemp += funStr.at(i);
+
+	int group_id = jmsg.at("group_id");
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
 		+ ",\"message\":\"[ECHO] "
 		+ UEtemp
 		+ "\"}}";
@@ -95,15 +51,16 @@ void timeO()
 	openCave = true;
 }
 
-void cave(std::string* msg)
+void cave(std::string* Botmsg)
 {
-	nlohmann::json jmsg = nlohmann::json::parse(msg);
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
 
 	if (openCave == false)
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÀäÈ´Ê±¼äÊÇ10Ãë£¡£¡£¡"
+		int group_id = jmsg.at("group_id");
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] å†·å´æ—¶é—´æ˜¯10ç§’ï¼ï¼ï¼"
 			+ "\"}}";
 		return;
 	}
@@ -114,25 +71,26 @@ void cave(std::string* msg)
 	iCave.close();
 	int max = jCaveCN.size();
 
-	std::random_device seed;//Ó²¼şÉú³ÉËæ»úÊıÖÖ×Ó
-	std::ranlux48 engine(seed());//ÀûÓÃÖÖ×ÓÉú³ÉËæ»úÊıÒıÇæ
-	std::uniform_int_distribution<> distrib(0, max);//ÉèÖÃËæ»úÊı·¶Î§£¬²¢Îª¾ùÔÈ·Ö²¼
+	std::random_device seed;//ç¡¬ä»¶ç”Ÿæˆéšæœºæ•°ç§å­
+	std::ranlux48 engine(seed());//åˆ©ç”¨ç§å­ç”Ÿæˆéšæœºæ•°å¼•æ“
+	std::uniform_int_distribution<> distrib(0, max);//è®¾ç½®éšæœºæ•°èŒƒå›´ï¼Œå¹¶ä¸ºå‡åŒ€åˆ†å¸ƒ
 	int random = distrib(engine);
 
-	std::string CAtemp = "µÁ°æ»ØÉù¶´ ¡ª¡ª£¨"
+	std::string CAtemp = "ç›—ç‰ˆå›å£°æ´ â€”â€”ï¼ˆ"
 		+ std::to_string(random)
-		+ "£©\n"
+		+ "ï¼‰\n"
 		+ BotfunOut(jCaveCN.at(random).at("content"))
-		+ "\n¡ª¡ª  "
+		+ "\nâ€”â€”  "
 		+ BotfunOut(jCaveCN.at(random).at("author"));
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":" + BotfunOut(jmsg.at("group_id")) + ",\"message\":\"" + CAtemp + "\"}}";
+	int group_id = jmsg.at("group_id");
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":" + std::to_string(group_id) + ",\"message\":\"" + CAtemp + "\"}}";
 	timeO();
 }
 
-void enable(std::string* msg)
+void enable(std::string* Botmsg)
 {
-	nlohmann::json jmsg = nlohmann::json::parse(msg);
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
 	std::string MFtemp, EAmsg = jmsg.at("message");
 	for (int i = 0; i < EAmsg.size(); i++)
 	{
@@ -144,11 +102,12 @@ void enable(std::string* msg)
 			break;
 		}
 	}
+	int group_id = jmsg.at("group_id");
 	if (MFtemp == "enable" || MFtemp == "disable")
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÎŞ·¨ÆôÓÃ»ò¹Ø±ÕÕâ¸ö¹¦ÄÜ£¡"
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] æ— æ³•å¯ç”¨æˆ–å…³é—­è¿™ä¸ªåŠŸèƒ½ï¼"
 			+ "\"}}";
 		return;
 	}
@@ -165,26 +124,27 @@ void enable(std::string* msg)
 	{
 		if (jBF.at("enable").contains(MFtemp))
 		{
-			if (jBF.at("enable").at(MFtemp) == true) *msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-				+ BotfunOut(jmsg.at("group_id"))
-				+ ",\"message\":\"[ERROR] ¸Ã¹¦ÄÜÒÑÆôÓÃ£¡"
+			if (jBF.at("enable").at(MFtemp) == true) *Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+				+ std::to_string(group_id)
+				+ ",\"message\":\"[ERROR] è¯¥åŠŸèƒ½å·²å¯ç”¨ï¼"
 				+ "\"}}";
 			else jBF.at("enable").at(MFtemp) = true;
 		}
-		else *msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] Î´ÕÒµ½´Ë¹¦ÄÜ£¡"
+		else *Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] æœªæ‰¾åˆ°æ­¤åŠŸèƒ½ï¼"
 			+ "\"}}";
 	}
-	else *msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡"
+	else *Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
+		+ ",\"message\":\"[ERROR] ä½ æ²¡æœ‰æƒé™ä½¿ç”¨è¯¥åŠŸèƒ½ï¼"
 		+ "\"}}";
 }
 
-void disable(std::string* msg)
+void disable(std::string* Botmsg)
 {
-	nlohmann::json jmsg = nlohmann::json::parse(msg);
+	
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
 	std::string MFtemp, DAmsg = jmsg.at("message");
 	for (int i = 0; i < DAmsg.size(); i++)
 	{
@@ -196,11 +156,12 @@ void disable(std::string* msg)
 			break;
 		}
 	}
+	int group_id = jmsg.at("group_id");
 	if (MFtemp == "enable" || MFtemp == "disable")
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÎŞ·¨ÆôÓÃ»ò¹Ø±ÕÕâ¸ö¹¦ÄÜ£¡"
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] æ— æ³•å¯ç”¨æˆ–å…³é—­è¿™ä¸ªåŠŸèƒ½ï¼"
 			+ "\"}}";
 		return;
 	}
@@ -216,39 +177,41 @@ void disable(std::string* msg)
 	{
 		if (jBF.at("enable").contains(MFtemp))
 		{
-			if (jBF.at("enable").at(MFtemp) = false) *msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-				+ BotfunOut(jmsg.at("group_id"))
-				+ ",\"message\":\"[ERROR] ¸Ã¹¦ÄÜÒÑ±»½ûÓÃ£¡"
+			if (jBF.at("enable").at(MFtemp) = false) *Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+				+ std::to_string(group_id)
+				+ ",\"message\":\"[ERROR] è¯¥åŠŸèƒ½å·²è¢«ç¦ç”¨ï¼"
 				+ "\"}}";
 			else
 			{
 				jBF.at("enable").at(MFtemp) = false;
-				*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-					+ BotfunOut(jmsg.at("group_id"))
-					+ ",\"message\":\"[ERROR] ½ûÓÃ³É¹¦£¡"
+				*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+					+ std::to_string(group_id)
+					+ ",\"message\":\"[ERROR] ç¦ç”¨æˆåŠŸï¼"
 					+ "\"}}";
 			}
 		}
-		else *msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] Î´ÕÒµ½´Ë¹¦ÄÜ£¡"
+		else *Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] æœªæ‰¾åˆ°æ­¤åŠŸèƒ½ï¼"
 			+ "\"}}";
 	}
-	else *msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡"
+	else *Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
+		+ ",\"message\":\"[ERROR] ä½ æ²¡æœ‰æƒé™ä½¿ç”¨è¯¥åŠŸèƒ½ï¼"
 		+ "\"}}";
 }
 
-void op(std::string* msg)
+void op(std::string* Botmsg)
 {
-	nlohmann::json jmsg = nlohmann::json::parse(msg);
+	
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
 	unsigned int user_id = jmsg.at("user_id");
+	int group_id = jmsg.at("group_id");
 	if (user_id != 2710458198 || user_id != 256626981)
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡"
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] ä½ æ²¡æœ‰æƒé™ä½¿ç”¨è¯¥åŠŸèƒ½ï¼"
 			+ "\"}}";
 		return;
 	}
@@ -267,9 +230,9 @@ void op(std::string* msg)
 				if (isdigit(OPmsg.at(a))) str += OPmsg.at(a);
 				else
 				{
-					*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-						+ BotfunOut(jmsg.at("group_id"))
-						+ ",\"message\":\"[ERROR] °üº¬·ÇÊı×Ö×Ö·û£¡"
+					**Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+						+ std::to_string(group_id)
+						+ ",\"message\":\"[ERROR] åŒ…å«éæ•°å­—å­—ç¬¦ï¼"
 						+ "\"}}";
 					break;
 				}
@@ -304,16 +267,18 @@ void op(std::string* msg)
 	iOP << jOP;
 	iOP.close();
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"[INFO] Ìí¼Ó³É¹¦£¡"
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
+		+ ",\"message\":\"[INFO] æ·»åŠ æˆåŠŸï¼"
 		+ "\"}}";
 }
 
-void talkBan(std::string* msg)
+void talkBan(std::string* Botmsg)
 {
-	nlohmann::json jmsg = nlohmann::json::parse(msg);
+	
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
 	std::string TBmsg = jmsg.at("message"), role = jmsg.at("sender").at("role");
+	int group_id = jmsg.at("group_id");
 
 	if (role == "owner" || role == "admin")
 	{
@@ -349,62 +314,48 @@ void talkBan(std::string* msg)
 		sstri >> itime;
 		itime *= 60;
 
-		*msg = "{\"action\":\"set_group_ban\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
+		*Botmsg = "{\"action\":\"set_group_ban\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
 			+ ",\"user_id\":" + std::to_string(id)
 			+ ",\"duration\":" + std::to_string(itime)
 			+ "}}";
 	}
 	else
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡\""
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] ä½ æ²¡æœ‰æƒé™ä½¿ç”¨è¯¥åŠŸèƒ½ï¼\""
 			+ "}}";
 		return;
 	}
 }
 
-void caveAdd(std::string* msg)
+void caveAdd(std::string* Botmsg)
 {
 	// example:
 	/*{
 		"author": "-",
-		"content" : "¿ìÀ´ÊÔÊÔPCL2ÏÂÔØÆ÷!",
-		"from" : "»ØÉù¶´"
+		"content" : "å¿«æ¥è¯•è¯•PCL2ä¸‹è½½å™¨!",
+		"from" : "å›å£°æ´"
 	},
 	{
 		"author": "-",
-		"content" : "°×ÈÕ·Å¸ëĞë×İ¾Æ£¬ÁúÃ¨×÷°éºÃ»¹Ïç",
-		"from" : "»ØÉù¶´"
+		"content" : "ç™½æ—¥æ”¾é¸½é¡»çºµé…’ï¼Œé¾™çŒ«ä½œä¼´å¥½è¿˜ä¹¡",
+		"from" : "å›å£°æ´"
 	},*/
 
-	std::fstream ifun("function.json");
-	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(msg);
-	ifun.close();
+	std::fstream ifun("wc.json");
+	
+	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
+	std::string message = jmsg.at("message");
+	int group_id = jmsg.at("group_id");
 
-	bool white_list = false;
-	for (int g = 0; g < jfun.at("white_list").size(); ++g)
-		if (jfun.at("user_id") == jfun.at("white_list").at(g))
-			white_list = true;
-	if (white_list == false)
-	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡\""
-		+ "}}";
-		return;
-	}
-
-	jmsg.clear();
-	ifun.open("wc.json");
-	std::string swc;
+	std::string swc, temp;
 	ifun >> swc;
 
-	std::string temp;
-	for (int i = msg->find(' ') + 1; i < msg->size(); ++i)
-		temp += msg->at(i);
-	std::string msginfo = "{\"author\": \"" + BotfunOut(jmsg.at("sender").at("nickname")) + "\",\"content\": \"" + temp + "\"}";
+	for (int i = message.find(' ') + 1; i < message.size(); i++)
+		temp += message.at(i);
+	std::string msginfo = "{\"author\": \"" + BotfunOut(jmsg.at("sender").at("nickname")) + "\",\n\"content\": \"" + temp + "\"\n}";
 
 	// [] size 2 at 1
 	// size -1 same string.end  |  size -2 same lase_second char
@@ -423,31 +374,34 @@ void caveAdd(std::string* msg)
 	}
 
 	ifun << swc;
+	jmsg.clear();
 	jmsg = nlohmann::json::parse(ifun);
 	ifun.close();
 	int num = jmsg.size();
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"[INFO] Ìí¼Ó³É¹¦£¡(ID: " + std::to_string(num) + ")\""
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
+		+ ",\"message\":\"[INFO] æ·»åŠ æˆåŠŸï¼(ID: " + std::to_string(num) + ")\""
 		+ "}}";
 }
 
-void caveList(std::string* msg)
+void caveList(std::string* Botmsg)
 {
 	std::fstream ifun("function.json");
-	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(msg);
+	
+	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(*Botmsg);
 	ifun.close();
 
 	bool white_list = false;
 	for (int g = 0; g < jfun.at("white_list").size(); ++g)
 		if (jfun.at("user_id") == jfun.at("white_list").at(g))
 			white_list = true;
+	int group_id = jmsg.at("group_id");
 	if (white_list == false)
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡\""
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] ä½ æ²¡æœ‰æƒé™ä½¿ç”¨è¯¥åŠŸèƒ½ï¼\""
 			+ "}}";
 		return;
 	}
@@ -455,14 +409,14 @@ void caveList(std::string* msg)
 	/*
 	 *[ID] 0
 	 *Hello World!
-	 *¡ª¡ª Somebody
+	 *â€”â€” Somebody
 	 *
 	 *[ID] 1
 	 *Test
-	 *¡ª¡ª Somebody
+	 *â€”â€” Somebody
 	 */
 
-	// for:  temp [ID] + i & \n + ¡ª¡ª  + author \n\n
+	// for:  temp [ID] + i & \n + â€”â€”  + author \n\n
 
 	ifun.open("wc.json");
 	nlohmann::json jwc = nlohmann::json::parse(ifun);
@@ -470,29 +424,31 @@ void caveList(std::string* msg)
 
 	std::string temp;
 	for (int i = 0; i > jwc.size(); ++i)
-		temp.append("[ID] " + std::to_string(i) + "\n" + "¡ª¡ª " + BotfunOut(jwc.at(i).at("author")) + "\n\n");
+		temp.append("[ID] " + std::to_string(i) + "\n" + "â€”â€” " + BotfunOut(jwc.at(i).at("author")) + "\n\n");
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
 		+ ",\"message\":\"" + temp + "\""
 		+ "}}";
 }
 
-void caveEnable(std::string* msg)
+void caveEnable(std::string* Botmsg)
 {
 	std::fstream ifun("function.json");
-	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(msg);
+	
+	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(*Botmsg);
 	ifun.close();
 
 	bool white_list = false;
 	for (int g = 0; g < jfun.at("white_list").size(); ++g)
 		if (jfun.at("user_id") == jfun.at("white_list").at(g))
 			white_list = true;
+	int group_id = jmsg.at("group_id");
 	if (white_list == false)
 	{
-		*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ BotfunOut(jmsg.at("group_id"))
-			+ ",\"message\":\"[ERROR] ÄãÃ»ÓĞÈ¨ÏŞÊ¹ÓÃ¸Ã¹¦ÄÜ£¡\""
+		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+			+ std::to_string(group_id)
+			+ ",\"message\":\"[ERROR] ä½ æ²¡æœ‰æƒé™ä½¿ç”¨è¯¥åŠŸèƒ½ï¼\""
 			+ "}}";
 		return;
 	}
@@ -508,9 +464,9 @@ void caveEnable(std::string* msg)
 	{
 		if (48 <= (int)msginfo.at(i) <= 57)
 		{
-			*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-				+ BotfunOut(jmsg.at("group_id"))
-				+ ",\"message\":\"[ERROR] °üº¬·ÇÊı×Ö×Ö·û£¡\""
+			*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+				+ std::to_string(group_id)
+				+ ",\"message\":\"[ERROR] åŒ…å«éæ•°å­—å­—ç¬¦ï¼\""
 				+ "}}";
 			return;
 		}
@@ -539,12 +495,12 @@ void caveEnable(std::string* msg)
 	fwc << msginfo;
 	fwc.close();
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"[INFO] Ìí¼ÓÍê³É£¡\"}}";
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
+		+ ",\"message\":\"[INFO] æ·»åŠ å®Œæˆï¼\"}}";
 }
 
-void FigureBed(std::string* msg)
+void FigurBed(std::string* Botmsg)
 {
 	// Image CQ Code:
 	// [CQ:image,file=7963d97b656bafd6e3687514b576b035.image,subType=0,
@@ -553,24 +509,25 @@ void FigureBed(std::string* msg)
 	// get cq JSON
 
 	std::string msginfo;
-	for (int i = msg->find(' ') + 1; i < msg->size(); i++)
-		msginfo += msg->at(i);
+	for (int i = Botmsg->find(' ') + 1; i < Botmsg->size(); i++)
+		msginfo += Botmsg->at(i);
 
-	nlohmann::json jcq = nlohmann::json::parse(cq::to_json(cq::getCQ(msginfo))), jmsg = nlohmann::json::parse(msg);
+	nlohmann::json jcq = nlohmann::json::parse(cq::to_json(cq::getCQ(msginfo))), jmsg = nlohmann::json::parse(*Botmsg);
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
-		+ ",\"message\":\"" + BotfunOut(jcq.at("url")) + "\"}}";
+	int group_id = jmsg.at("group_id");
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
+		+ ",\"message\":\"[QQå›¾åºŠ] å›¾åºŠURLï¼š" + BotfunOut(jcq.at("data").at("url")) + "\"}}";
 }
 
-void BotInfo(std::string* msg)
+void BotInfo(std::string* Botmsg)
 {
 	// ifstream function.json >> json
 	// temp += for get info of function
-	// *msg
+	// *Botmsg
 
-	std::ifstream ifun("fucntion.json");
-	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(msg);
+	std::ifstream ifun("function.json");
+	nlohmann::json jfun = nlohmann::json::parse(ifun),jmsg = nlohmann::json::parse(*Botmsg);
 	ifun.close();
 
 	/*
@@ -582,7 +539,8 @@ void BotInfo(std::string* msg)
 	for (int i = 0; i < jfun.at("function").size(); i++)
 		temp.append("\n" + BotfunOut(jfun.at("function").at(i)));
 
-	*msg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-		+ BotfunOut(jmsg.at("group_id"))
+	int group_id = jmsg.at("group_id");
+	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+		+ std::to_string(group_id)
 		+ ",\"message\":\"" + temp + "\"}}";
 }

@@ -25,8 +25,6 @@ namespace cq
 		// return temp
 
 		std::string temp = "{\"type\":\"";
-
-		int g = 0;
 		for (int i = 0; i < msg.size(); i++)
 		{
 			if (msg[i] == ':')
