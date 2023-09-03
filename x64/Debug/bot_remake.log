@@ -11,7 +11,7 @@ C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\function\botFunction.hpp(
               _Elem=char
           ]
 C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\function\botFunction.hpp(304,24): warning C4309: “参数”: 截断常量值
-C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\function\botFunction.hpp(465,10): warning C4804: “<=”: 在操作中使用类型“bool”不安全
+C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\function\botFunction.hpp(481,10): warning C4804: “<=”: 在操作中使用类型“bool”不安全
 C:\Users\yanyu\Desktop\QQBot\bot_remake\bot_remake\lib\function\cq.hpp(67): warning C4715: “cq::to_json”: 不是所有的控件路径都返回值
 LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/LTCG”规范)
   LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能

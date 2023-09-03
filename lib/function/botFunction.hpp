@@ -6,6 +6,11 @@
 #include "json.hpp"
 #include "cq.hpp"
 
+// Set
+std::ifstream iCave("cave.json");
+/*nlohmann::json jCave = nlohmann::json::parse(iCave);*/
+nlohmann::json jCaveCN = nlohmann::json::parse(iCave);
+
 std::string msgFun(std::string MFmsg)
 {
 	MFmsg.erase(MFmsg.begin());
@@ -65,12 +70,7 @@ void cave(std::string* Botmsg)
 		return;
 	}
 
-	std::ifstream iCave("cave.json");
-	/*nlohmann::json jCave = nlohmann::json::parse(iCave);*/
-	nlohmann::json jCaveCN = nlohmann::json::parse(iCave);
-	iCave.close();
 	int max = jCaveCN.size();
-
 	std::random_device seed;//硬件生成随机数种子
 	std::ranlux48 engine(seed());//利用种子生成随机数引擎
 	std::uniform_int_distribution<> distrib(0, max);//设置随机数范围，并为均匀分布
@@ -333,7 +333,8 @@ void talkBan(std::string* Botmsg)
 void caveAdd(std::string* Botmsg)
 {
 	// example:
-	/*{
+	/*
+	{
 		"author": "-",
 		"content" : "快来试试PCL2下载器!",
 		"from" : "回声洞"
@@ -342,20 +343,23 @@ void caveAdd(std::string* Botmsg)
 		"author": "-",
 		"content" : "白日放鸽须纵酒，龙猫作伴好还乡",
 		"from" : "回声洞"
-	},*/
+	}
+	*/
 
-	std::fstream ifun("wc.json");
-	
 	nlohmann::json jmsg = nlohmann::json::parse(*Botmsg);
 	std::string message = jmsg.at("message");
 	int group_id = jmsg.at("group_id");
 
+	std::fstream ifun("wc.json");
 	std::string swc, temp;
 	ifun >> swc;
 
 	for (int i = message.find(' ') + 1; i < message.size(); i++)
 		temp += message.at(i);
-	std::string msginfo = "{\"author\": \"" + BotfunOut(jmsg.at("sender").at("nickname")) + "\",\n\"content\": \"" + temp + "\"\n}";
+	std::string msginfo = "{\"author\": \""
+						+ BotfunOut(jmsg.at("sender").at("nickname"))
+						+ "\",\n\"content\": \""
+						+ temp + "\"\n}";
 
 	// [] size 2 at 1
 	// size -1 same string.end  |  size -2 same lase_second char
@@ -392,43 +396,54 @@ void caveList(std::string* Botmsg)
 	nlohmann::json jfun = nlohmann::json::parse(ifun), jmsg = nlohmann::json::parse(*Botmsg);
 	ifun.close();
 
-	bool white_list = false;
-	for (int g = 0; g < jfun.at("white_list").size(); ++g)
-		if (jfun.at("user_id") == jfun.at("white_list").at(g))
-			white_list = true;
 	int group_id = jmsg.at("group_id");
-	if (white_list == false)
-	{
-		*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
-			+ std::to_string(group_id)
-			+ ",\"message\":\"[ERROR] 你没有权限使用该功能！\""
-			+ "}}";
-		return;
-	}
+	unsigned int user_id = jmsg.at("user_id");
+	for (int i = 0; i < jfun.at("white_list").size(); ++i)
+		if (user_id == jfun.at("white_list").at(i))
+		{
+			/*
+			 *[ID] 0
+			 *Hello World!
+			 *—— Somebody
+			 *
+			 *[ID] 1
+			 *Test
+			 *—— Somebody
+			 */
 
-	/*
-	 *[ID] 0
-	 *Hello World!
-	 *—— Somebody
-	 *
-	 *[ID] 1
-	 *Test
-	 *—— Somebody
-	 */
+			 // for:  temp [ID] + i & \n + ——  + author \n\n
 
-	// for:  temp [ID] + i & \n + ——  + author \n\n
+			jfun.clear();
+			ifun.open("wc.json");
+			jfun = nlohmann::json::parse(ifun);
+			ifun.close();
 
-	ifun.open("wc.json");
-	nlohmann::json jwc = nlohmann::json::parse(ifun);
-	ifun.close();
+			std::string temp;
+			int jsonSize = jfun.size();
+			for (int u = 0; u < jsonSize; u++)
+				temp.append("[ID] " + std::to_string(u) 
+					+ "\n" + BotfunOut(jfun.at(u).at("content")) 
+					+ "\n—— " + BotfunOut(jfun.at(u).at("author")) 
+					+ "\n");
 
-	std::string temp;
-	for (int i = 0; i > jwc.size(); ++i)
-		temp.append("[ID] " + std::to_string(i) + "\n" + "—— " + BotfunOut(jwc.at(i).at("author")) + "\n\n");
-
+			if (temp.size() == 0)
+			{
+				*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+				+ std::to_string(group_id)
+				+ ",\"message\":\"[ERROR] 等待列表内无消息！\""
+				+ "}}";
+				return;
+			}
+				
+			*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
+				+ std::to_string(group_id)
+				+ ",\"message\":\"" + temp + "\""
+				+ "}}";
+			return;
+		}
 	*Botmsg = "{\"action\":\"send_group_msg\",\"params\":{\"group_id\":"
 		+ std::to_string(group_id)
-		+ ",\"message\":\"" + temp + "\""
+		+ ",\"message\":\"[ERROR] 你没有权限使用该功能！\""
 		+ "}}";
 }
 

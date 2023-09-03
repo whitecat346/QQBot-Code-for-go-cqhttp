@@ -1,6 +1,10 @@
-﻿[
-  {
+[ 
+  { 
 	"author": "s.b.",
 	"content": "Hello World!"
-  }
-]
+  }, 
+  { 
+    "author": "WhiteCAT",
+    "content": "This is a test string!"
+  } 
+] 
